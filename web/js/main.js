@@ -1,10 +1,17 @@
-document.getElementById('calculator-display').innerHTML = 0;
+//document.getElementById('calculator-display').innerHTML = 0;
 var num1 = [];
 console.log(num1);
 var operator1 = "";
+var calDisplay = document.getElementById('calculator-display');
+calDisplay.innerHTML = "";
+
+function myClear(){
+    num1 = [];
+    calDisplay.innerHTML = "";
+ }
 
 function myFunction(x) {
-    document.getElementById('calculator-display').innerHTML += x;
+    calDisplay.innerHTML += x;
 
     num1.push(x);
     console.log(num1);
@@ -19,10 +26,8 @@ function mySwitch(y) {
     operator1 = y;
     console.log(operator1);
 
-    num1 = [];
-    document.getElementById('calculator-display').innerHTML = "";
+    myClear();
     console.log(num1);
-
 }
 
 function myEqual() {
@@ -31,7 +36,7 @@ function myEqual() {
     console.log(number2);
     console.log(number1);
 
-    document.getElementById('calculator-display').innerHTML = "";
+    calDisplay.innerHTML = "";
 
     switch (operator1) {
         case 'add':
@@ -50,10 +55,5 @@ function myEqual() {
         // code block
     }
 
-    document.getElementById('calculator-display').innerHTML = sum;
+    calDisplay.innerHTML = sum;
 }
-
-function myClear(){
-    num1 = [];
-    document.getElementById('calculator-display').innerHTML = "";
- }
